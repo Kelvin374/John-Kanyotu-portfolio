@@ -38,15 +38,15 @@
             let wordIndex = 0;
             
             aboutTexts.forEach((aboutText) => {
-                const text = aboutText.textContent;
-                const words = text.split(' ');
+                const text = aboutText.textContent.trim();
+                const words = text.split(/\s+/).filter(word => word.length > 0);
                 
                 aboutText.innerHTML = '';
                 
                 words.forEach((word, index) => {
                     const span = document.createElement('span');
                     span.className = 'word';
-                    span.textContent = word + ' ';
+                    span.textContent = word;
                     span.style.animationDelay = `${(wordIndex + index) * 0.05}s`;
                     aboutText.appendChild(span);
                 });
@@ -765,6 +765,7 @@ function closeSuccessModal() {
             const submitBtn = this.querySelector('.submit-btn');
             const originalBtnHTML = submitBtn.innerHTML;
 
+            // Update button state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> SENDING...';
             submitBtn.disabled = true;
 
@@ -779,16 +780,34 @@ function closeSuccessModal() {
                     }
                 });
 
+                // FormSubmit returns JSON with { success: true } on success
                 if (response.ok) {
-                    openSuccessModal();
-                    this.reset();
+                    try {
+                        const data = await response.json();
+                        if (data.success) {
+                            // Show success modal
+                            openSuccessModal();
+                            // Reset form
+                            this.reset();
+                        } else {
+                            throw new Error(data.message || 'Form submission failed');
+                        }
+                    } catch (jsonError) {
+                        // If response is not JSON but status is OK, assume success
+                        // (FormSubmit sometimes returns HTML)
+                        openSuccessModal();
+                        this.reset();
+                    }
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error(`Server error: ${response.status}`);
                 }
             } catch (error) {
                 console.error('Error submitting form:', error);
-                alert('An error occurred. Please try again later.');
+                // Show user-friendly error message
+                alert('An error occurred while sending your message. Please check your connection and try again, or contact me directly via email.');
+                // You can also show a custom error modal here instead of alert
             } finally {
+                // Restore button state
                 submitBtn.innerHTML = originalBtnHTML;
                 submitBtn.disabled = false;
             }
