@@ -280,7 +280,7 @@ nav {
     line-height: 2;
     font-size: 1.1rem;
     margin: 2rem 0;
-    word-spacing: 0.2rem;
+    word-spacing: 0;
     letter-spacing: 0.02rem;
 }
 
@@ -288,7 +288,7 @@ nav {
     display: inline-block;
     opacity: 0;
     animation: wordDrop 0.5s ease forwards;
-    margin-right: 0.3rem;
+    margin-right: 0.15em;
 }
 
 .about-resume {
