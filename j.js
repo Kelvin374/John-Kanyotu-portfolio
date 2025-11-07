@@ -612,18 +612,30 @@ function closeSuccessModal() {
         function animateTestimonialWords(testimonialIndex) {
             const slides = document.querySelectorAll('.testimonial-slide');
             const textElement = slides[testimonialIndex].querySelector('.testimonial-text');
-            const text = textElement.textContent.trim();
-            const words = text.split(' ');
+            if (!textElement) return;
+            
+            // Store original text if not already stored
+            if (!textElement.dataset.originalText) {
+                textElement.dataset.originalText = textElement.textContent.trim();
+            }
+            
+            const text = textElement.dataset.originalText;
+            const words = text.split(/(\s+)/).filter(part => part.length > 0);
             
             textElement.innerHTML = '';
             textElement.classList.remove('animate');
             
             words.forEach((word, index) => {
-                const span = document.createElement('span');
-                span.className = 'word';
-                span.textContent = word + ' ';
-                span.style.animationDelay = `${index * 0.03}s`;
-                textElement.appendChild(span);
+                if (word.trim() === '') {
+                    // Preserve whitespace
+                    textElement.appendChild(document.createTextNode(' '));
+                } else {
+                    const span = document.createElement('span');
+                    span.className = 'word';
+                    span.textContent = word;
+                    span.style.animationDelay = `${index * 0.02}s`;
+                    textElement.appendChild(span);
+                }
             });
             
             setTimeout(() => {
