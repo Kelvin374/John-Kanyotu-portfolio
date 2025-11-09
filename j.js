@@ -89,9 +89,9 @@
         // Event gallery data
         const eventGalleries = [
             {
-                title: 'Tisch Scholars Program - Dana-Farber Cancer Institute',
+                title: 'Young Life Youth Leadership Program',
                 images: [
-                    'event1.png'
+                    'john3.jpeg'
                 ]
             }
             /*
@@ -224,64 +224,67 @@
         // Project Modal Data
         const projectsData = [
             {
-                title: 'Career.edYOU Academy - JP Morgan Chase',
+                title: 'Economic Research Project',
                 slides: [
                     {
                         type: 'details',
                         title: 'Project Overview',
                         content: `
-                            <p><strong>Objective:</strong> Complete an intensive virtual training program designed to prepare participants for careers at JP Morgan Chase, focusing on interview preparation, understanding firm culture, and building foundational business skills.</p>
-                            <p><strong>Duration:</strong> 6 weeks (Sept 2025-Present)</p>
-                            <p><strong>Team Size:</strong> Individual participant in cohort-based program</p>
-                            <h4 style="color: #ff6b00; margin-top: 2rem;">Methodology:</h4>
+                            <p><strong>Objective:</strong> Conduct rigorous econometric analysis to determine the effects of exchange rate fluctuations on Kenya's economic growth from 1994-2022, focusing on transmission mechanisms through interest rates, inflation, and export performance.</p>
+                            <p><strong>Duration:</strong> 8 months (Academic Year 2024)</p>
+                            <p><strong>Recognition:</strong> Vice Chancellor's recognition as top 10 Economic Researcher</p>
+                            <h4 style="color: #ff6b00; margin-top: 2rem;">Research Focus Areas:</h4>
                             <ul>
-                                <li>Participated in structured virtual sessions covering interview preparation techniques</li>
-                                <li>Engaged with recruiting team members to understand hiring processes and expectations</li>
-                                <li>Studied JP Morgan Chase's culture, values, and lines of business</li>
-                                <li>Developed foundational skills relevant to investment banking and financial services</li>
-                                <li>Completed practical exercises simulating real-world banking scenarios</li>
+                                <li>Exchange Rate Volatility Analysis</li>
+                                <li>Macroeconomic Growth Indicators</li>
+                                <li>Time Series Econometrics</li>
                             </ul>
                         `
                     },
                     {
                         type: 'details',
-                        title: 'Skills Developed',
+                        title: 'Methodology & Analysis',
                         content: `
-                            <p><strong>Professional Development Areas:</strong></p>
+                            <h4 style="color: #ff6b00; margin-bottom: 1.5rem;">Research Methodology:</h4>
                             <ul>
-                                <li>Interview preparation and professional communication</li>
-                                <li>Financial services industry knowledge</li>
-                                <li>Business analysis and critical thinking</li>
-                                <li>Professional networking and relationship building</li>
-                            </ul>
-                            <h4 style="color: #ff6b00; margin-top: 2rem;">Key Features:</h4>
-                            <ul>
-                                <li>Structured learning modules covering firm operations</li>
-                                <li>Direct interaction with JP Morgan Chase recruiting team</li>
-                                <li>Real-world case study analysis</li>
-                                <li>Professional skill development workshops</li>
-                                <li>Industry insights and career pathway guidance</li>
+                                <li>Collected and cleaned 28 years of macroeconomic data from Central Bank of Kenya, Kenya National Bureau of Statistics, and World Bank databases</li>
+                                <li>Performed time series analysis using econometric models to test for stationarity, cointegration, and causality</li>
+                                <li>Analyzed correlation patterns between exchange rate movements and GDP growth trajectories</li>
+                                <li>Examined transmission channels: interest rate differentials, inflation pass-through effects, and trade balance impacts</li>
+                                <li>Conducted robustness checks using multiple regression models and diagnostic tests</li>
                             </ul>
                         `
                     },
                     {
                         type: 'details',
-                        title: 'Key Outcomes',
+                        title: 'Skills & Outcomes',
                         content: `
-                            <h4 style="color: #ff6b00; margin-bottom: 1.5rem;">Professional Development:</h4>
+                            <h4 style="color: #ff6b00; margin-bottom: 1.5rem;">Skills Developed:</h4>
                             <ul>
-                                <li>Enhanced understanding of investment banking operations</li>
-                                <li>Improved interview and communication skills</li>
-                                <li>Built foundational knowledge of financial services</li>
-                                <li>Developed professional network within the industry</li>
+                                <li>Econometric modeling and time series analysis</li>
+                                <li>Macroeconomic data collection and validation</li>
+                                <li>Statistical inference and hypothesis testing</li>
+                                <li>Advanced data analysis using statistical software</li>
+                                <li>Economic forecasting techniques</li>
                             </ul>
-                            <h4 style="color: #ff6b00; margin-top: 2rem; margin-bottom: 1.5rem;">Career Impact:</h4>
+                            <h4 style="color: #ff6b00; margin-top: 2rem; margin-bottom: 1.5rem;">Key Outcomes:</h4>
                             <ul>
-                                <li>Prepared for competitive recruitment processes</li>
-                                <li>Gained insights into firm culture and expectations</li>
-                                <li>Established connections with industry professionals</li>
+                                <li>Identified significant relationships between exchange rate volatility and economic indicators</li>
+                                <li>Quantified impact channels through interest rates, inflation, and export performance</li>
+                                <li>Produced publication-ready research examining Kenya's exchange rate dynamics</li>
+                                <li>Received Vice Chancellor's recognition for research excellence</li>
                             </ul>
                         `
+                    },
+                    {
+                        type: 'image',
+                        title: 'Research Documentation - Part 1',
+                        image: 'john1.jpeg'
+                    },
+                    {
+                        type: 'image',
+                        title: 'Research Documentation - Part 2',
+                        image: 'john2.jpeg'
                     }
                 ]
             },
@@ -461,6 +464,15 @@ function closeSuccessModal() {
                         <div class="modal-slide-content">
                             <h3>${slide.title}</h3>
                             ${slide.content}
+                        </div>
+                    `;
+                } else if (slide.type === 'image') {
+                    slideDiv.innerHTML = `
+                        <div class="modal-slide-content">
+                            <h3>${slide.title}</h3>
+                            <div class="slide-media">
+                                <img src="${slide.image}" alt="${slide.title}" style="width: 100%; height: 100%; object-fit: contain;">
+                            </div>
                         </div>
                     `;
                 } else {
