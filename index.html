@@ -94,23 +94,27 @@
 
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav id="navbar">
         <a href="#home" class="logo">
             <div class="logo-box">JK</div>
             <div class="logo-text">
-                <span class="name">JOHN</span>
-                <span class="surname">KANYOTU</span>
+                <span class="name">John</span>
+                <span class="surname">Kanyotu</span>
             </div>
         </a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Portfolio</a></li>
-            <li><a href="#seminars">Seminars</a></li>
-            <li><a href="#contact">Contact me</a></li>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul id="navLinks">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Portfolio</a></li>
+            <li><a href="#seminars" class="nav-link">Seminars</a></li>
+            <li><a href="#contact" class="nav-link">Contact me</a></li>
         </ul>
-        <a href="#contact" class="hire-btn">Hire Me</a>
     </nav>
 
     <!-- Hero Section -->
@@ -129,7 +133,7 @@
 
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Hire Me</a>
-                <a href="john%20kanyotu%20cv.pdf" class="btn-secondary" download>Download CV</a>
+                <a href="john%20kanyotu%20cv.pdf" class="btn-secondary" download="John_Kanyotu_CV.pdf" target="_blank">Download CV</a>
             </div>
 
             <div class="stats">
