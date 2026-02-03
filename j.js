@@ -86,6 +86,23 @@
 
         contactObserver.observe(contactSection);
 
+        // Experience section scroll animations
+        const experienceItems = document.querySelectorAll('.experience-item');
+        const experienceObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 200); // Stagger animations
+                    experienceObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        experienceItems.forEach(item => {
+            experienceObserver.observe(item);
+        });
+
         // Event gallery data
         const eventGalleries = [
             {
