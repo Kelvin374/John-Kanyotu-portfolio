@@ -534,7 +534,7 @@
         <div class="testimonials-container">
             <div class="testimonial-slide active">
                 <div class="card-photo">
-                    <img src="john124.png" alt="John Kanyotu">
+                    <img src="testimonials/prifkibati.png" alt="Dr. Kibati">
                 </div>
                 <div class="testimonial-content">
                     <div class="quote-icon">"</div>
@@ -548,44 +548,7 @@
                     <div class="testimonial-position">Docterate Lecturer, Kabarak University</div>
                 </div>
             </div>
-            <!--
-            <div class="testimonial-slide">
-                <div class="testimonial-avatar">
-                    <i class="fas fa-user-graduate"></i>
-                    To add image: <img src="sarah-chen.jpg" alt="Sarah Chen"> 
-                </div>
-                <div class="testimonial-content">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text">
-                        During our summer program, John impressed us with his ability to quickly grasp complex financial
-                        models and contribute meaningful insights to our team discussions. His attention to detail and
-                        proactive approach to learning made him stand out among his peers. I would gladly work with him
-                        again.
-                    </p>
-                    <div class="testimonial-author">Sarah Chen</div>
-                    <div class="testimonial-position">Vice President, Goldman Sachs Investment Banking</div>
-                </div>
-            </div>
-            -->
-            <!--
-            <div class="testimonial-slide">
-                <div class="testimonial-avatar">
-                    <i class="fas fa-briefcase"></i>
-                   
-                </div>
-                <div class="testimonial-content">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text">
-                        What sets John apart is his ability to bridge the gap between finance theory and practical
-                        application. His Python skills and data visualization capabilities are impressive, and he
-                        communicates complex findings with clarity. He would be an asset to any quantitative finance
-                        team.
-                    </p>
-                    <div class="testimonial-author">David Rodriguez</div>
-                    <div class="testimonial-position">Head of Quantitative Research, Citadel Securities</div>
-                </div>
-            </div>
-        -->
+
             <div class="testimonial-slide">
                 <div class="testimonial-avatar">
                     <i class="fas fa-chalkboard-teacher"></i>
@@ -608,8 +571,6 @@
         <div class="testimonial-dots">
             <span class="testimonial-dot active" onclick="setTestimonial(0)"></span>
             <span class="testimonial-dot" onclick="setTestimonial(1)"></span>
-            <span class="testimonial-dot" onclick="setTestimonial(2)"></span>
-            <span class="testimonial-dot" onclick="setTestimonial(3)"></span>
         </div>
     </section>
 
@@ -637,6 +598,24 @@
                     can apply my analytical skills, passion for finance, and continuous learning mindset. Let's connect!
                 </p>
 
+                <div class="contact-methods">
+                    <a href="https://wa.me/254700466467" target="_blank" class="contact-method whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="contact-info">
+                            <span class="contact-label">WhatsApp</span>
+                            <span class="contact-value">+254 700 466 467</span>
+                        </div>
+                    </a>
+                    
+                    <a href="tel:+254700466467" class="contact-method phone">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-info">
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">+254 700 466 467</span>
+                        </div>
+                    </a>
+                </div>
+
                 <form id="contactForm" class="contact-form"
                     action="https://formsubmit.co/johnkanyotu2000@gmail.com" method="POST">
                     <!-- FormSubmit Configuration -->
@@ -657,27 +636,12 @@
         </div>
     </section>
 
-    <!-- Floating Navigation -->
-    <div class="floating-nav">
-        <div class="float-nav-btn" onclick="scrollToSection('home')">
-            <i class="fas fa-home"></i>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 John Kanyotu. All Rights Reserved.</p>
         </div>
-        <div class="float-nav-btn" onclick="scrollToSection('about')">
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="float-nav-btn" onclick="scrollToSection('experience')">
-            <i class="fas fa-briefcase"></i>
-        </div>
-        <div class="float-nav-btn" onclick="scrollToSection('projects')">
-            <i class="fas fa-folder"></i>
-        </div>
-        <div class="float-nav-btn" onclick="scrollToSection('seminars')">
-            <i class="fas fa-calendar"></i>
-        </div>
-        <div class="float-nav-btn" onclick="scrollToSection('contact')">
-            <i class="fas fa-envelope"></i>
-        </div>
-    </div>
+    </footer>
 
     <!-- Success Modal -->
     <div id="successModal" class="modal">
