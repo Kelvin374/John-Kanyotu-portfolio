@@ -730,6 +730,42 @@ nav a.active::after {
     animation: dropDown 1.5s ease-out forwards;
 }
 
+/* Graduation Overlay */
+.graduation-overlay {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    opacity: 0;
+    animation: zoomInFade 1.5s ease-out 1.5s forwards;
+}
+
+.graduation-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ff6b00;
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+    background: #fff;
+}
+
+@keyframes zoomInFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
 .lanyard-string {
     width: 2px;
     height: 150px;
@@ -2147,6 +2183,16 @@ nav a.active::after {
 
     .lanyard-card.animated {
         animation: dropDown 1.5s ease-out forwards;
+    }
+
+    .graduation-overlay {
+        top: -15px;
+    }
+
+    .graduation-image {
+        width: 80px;
+        height: 80px;
+        border: 3px solid #ff6b00;
     }
 
     .lanyard-string {
